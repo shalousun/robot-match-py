@@ -1,5 +1,7 @@
+# -*- coding: utf-8 -*-
 import pymysql
 import pymysql.cursors
+import pandas as pd
 
 
 class MysqlProvider:
@@ -23,16 +25,20 @@ class MysqlProvider:
 
     def get_fields_info(self, table_name):
         cursor = self.connect.cursor()
-        sql = "SHOW FULL COLUMNS FROM my_bi." + table_name
+        sql = "SHOW FULL COLUMNS FROM boco_dady." + table_name
+
         result_list = []
         try:
             cursor.execute(sql)
             # print(cursor.description)
             rs = cursor.fetchall()
             print(rs)
-
+            rs_dataframe = pd.DataFrame(list(rs),columns=['field', 'type', 'collation', 'null',
+                                                    'key', 'default', 'extra', 'privileges', 'comment'])
+            print (rs_dataframe)
             for rec in rs:
                 print(rec[0])
+
         except Exception as e:
             print(e)
         finally:
@@ -59,11 +65,11 @@ class MysqlProvider:
 
 def get_connect():
     # 注意是utf8不是utf-8
-    connection = pymysql.connect(host='localhost', user='root', password='root', db='my_bi', port=3306, charset='utf8')
+    connection = pymysql.connect(host='192.168.15.222', user='root', password='Boco#1234', db='boco_dady', port=3306, charset='utf8')
     return connection
 
 
 if __name__ == "__main__":
     connect = get_connect()
     mysql_provider = MysqlProvider(connect)
-    mysql_provider.get_fields_info('t_data_source')
+    mysql_provider.get_fields_info('base_info')
