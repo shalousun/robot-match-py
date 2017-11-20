@@ -20,12 +20,21 @@ class OracleProvider:
             print(ex)
 
     def get_fields_info(self, table_name):
-        if table_name.strip() == "":
-            sql = "select distinct column_name, data_type,data_length,nullable,high_value,low_value, data_precision" \
-                  " from user_tab_cols"
+        if table_name and table_name.strip():
+            # table_name is not None AND table_nameg is not empty or blank
+            sql = "SELECT COL.table_name, col.column_name, col.data_type, COL.data_length, COL.nullable , COL.high_value," \
+                  " COL.low_value, COL.data_precision, CASE uc.constraint_type " \
+                  "WHEN 'P' THEN 'yes' ELSE '' END AS \"PRIMARY_KEY\" FROM user_tab_columns col LEFT JOIN " \
+                  "user_cons_columns ucc ON ucc.table_name = col.table_name AND ucc.column_name = col.column_name " \
+                  "LEFT JOIN user_constraints uc ON uc.constraint_name = ucc.constraint_name AND uc.constraint_type = 'P' " \
+                  "where  COL.TABLE_NAME = '" + table_name + "'"
         else:
-            sql = "select distinct column_name,data_type, data_length,nullable,high_value, low_value,data_precision " \
-                  "from user_tab_cols where table_name ="+table_name
+            # table_name is None OR table_name is empty or blank
+            sql = "SELECT COL.table_name, col.column_name, col.data_type, COL.data_length, COL.nullable , COL.high_value," \
+                  " COL.low_value, COL.data_precision , CASE uc.constraint_type " \
+                  "WHEN 'P' THEN 'yes' ELSE '' END AS \"PRIMARY_KEY\" FROM user_tab_columns col LEFT JOIN " \
+                  "user_cons_columns ucc ON ucc.table_name = col.table_name AND ucc.column_name = col.column_name " \
+                  "LEFT JOIN user_constraints uc ON uc.constraint_name = ucc.constraint_name AND uc.constraint_type = 'P'"
         try:
             cursor = self.connect.cursor()
             cursor.execute(sql)
@@ -51,6 +60,6 @@ if __name__ == '__main__':
     connect = get_connect()
     oracle_provider = OracleProvider(connect)
     rs = oracle_provider.get_fields_info("")
-    rs_dataframe = pd.DataFrame(list(rs), columns=['column_name', 'data_type', 'data_length', 'nullable',
-                                                   'high_value', 'low_value', 'data_precision'])
+    rs_dataframe = pd.DataFrame(list(rs), columns=['table_name', 'column_name', 'data_type', 'data_length', 'nullable',
+                                                   'high_value', 'low_value', 'data_precision', 'primary_key'])
     print(rs_dataframe)
