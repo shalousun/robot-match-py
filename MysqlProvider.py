@@ -33,8 +33,8 @@ class MysqlProvider:
             # print(cursor.description)
             rs = cursor.fetchall()
             print(rs)
-            rs_dataframe = pd.DataFrame(list(rs),columns=['field', 'type', 'collation', 'null',
-                                                    'key', 'default', 'extra', 'privileges', 'comment'])
+            rs_dataframe = pd.DataFrame(list(rs), columns=['field', 'type', 'collation', 'null', 'key', 'default',
+                                                           'extra', 'privileges', 'comment'])
             print (rs_dataframe)
             for rec in rs:
                 print(rec[0])
@@ -65,7 +65,8 @@ class MysqlProvider:
 
 def get_connect():
     # 注意是utf8不是utf-8
-    connection = pymysql.connect(host='192.168.15.222', user='root', password='Boco#1234', db='boco_dady', port=3306, charset='utf8')
+    connection = pymysql.connect(host='192.168.15.222', user='root', password='Boco#1234', db='boco_dady', port=3306,
+                                 charset='utf8')
     return connection
 
 
