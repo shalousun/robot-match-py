@@ -44,7 +44,6 @@ class SqlServerProvider:
             cursor = self.connect.cursor()
             cursor.execute(sql)
             rs = cursor.fetchall()
-            print(rs)
             return rs
         except Exception as ex:
             print(ex)
@@ -66,4 +65,8 @@ def get_connect():
 if __name__ == "__main__":
     connect = get_connect()
     mss_sql = SqlServerProvider(connect)
-    mss_sql.get_fields_info("bact_biochem")
+    rs = mss_sql.get_fields_info("bact_biochem")
+    rs_dataframe = pd.DataFrame(list(rs), columns=['table_name', 'column_name', 'data_type', 'CHARACTER_MAXIMUM_LENGTH',
+                                                   'NUMERIC_PRECISION', 'NUMERIC_SCALE', 'nullable',
+                                                   'IsPartOfPrimaryKey'])
+    print(rs_dataframe)
