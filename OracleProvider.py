@@ -2,6 +2,7 @@
 import os
 os.environ['NLS_LANG'] = '.AL32UTF8'
 import cx_Oracle
+import pandas as pd
 
 class OracleProvider:
     def __init__(self, connection):
@@ -19,9 +20,9 @@ class OracleProvider:
 
     def get_fields_info(self, table_name):
         if table_name.strip() == "":
-            sql = "select distinct column_name，data_type,data_length,nullable,high_value,low_value,data_precision from user_tab_cols"
+            sql = "select distinct column_name,data_type,data_length,nullable,high_value,low_value,data_precision from user_tab_cols"
         else:
-            sql = "select distinct column_name，data_type,data_length,nullable,high_value,low_value,data_precision from user_tab_cols where table_name ="+table_name
+            sql = "select distinct column_name,data_type,data_length,nullable,high_value,low_value,data_precision from user_tab_cols where table_name ="+table_name
         try:
             cursor = self.connect.cursor()
             cursor.execute(sql)
@@ -46,4 +47,6 @@ if __name__ == '__main__':
     connect = get_connect()
     oracle_provider = OracleProvider(connect)
     rs = oracle_provider.get_fields_info("")
-    print(rs)
+    rs_dataframe = pd.DataFrame(list(rs), columns=['column_name', 'data_type', 'data_length', 'nullable',
+                                                   'high_value', 'low_value', 'data_precision'])
+    print(rs_dataframe)
