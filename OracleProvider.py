@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 import os
-os.environ['NLS_LANG'] = '.AL32UTF8'
 import cx_Oracle
 import pandas as pd
+os.environ['NLS_LANG'] = '.AL32UTF8'
+
 
 class OracleProvider:
     def __init__(self, connection):
@@ -15,30 +16,33 @@ class OracleProvider:
             cursor.execute(sql)
             rs = cursor.fetchall()
             return rs
-        except (cx_Oracle.DatabaseError) as ex:
+        except cx_Oracle.DatabaseError as ex:
             print(ex)
 
     def get_fields_info(self, table_name):
         if table_name.strip() == "":
-            sql = "select distinct column_name,data_type,data_length,nullable,high_value,low_value,data_precision from user_tab_cols"
+            sql = "select distinct column_name, data_type,data_length,nullable,high_value,low_value, data_precision" \
+                  " from user_tab_cols"
         else:
-            sql = "select distinct column_name,data_type,data_length,nullable,high_value,low_value,data_precision from user_tab_cols where table_name ="+table_name
+            sql = "select distinct column_name,data_type, data_length,nullable,high_value, low_value,data_precision " \
+                  "from user_tab_cols where table_name ="+table_name
         try:
             cursor = self.connect.cursor()
             cursor.execute(sql)
             rs = cursor.fetchall()
             return rs
-        except (cx_Oracle.DatabaseError) as ex:
+        except cx_Oracle.DatabaseError as ex:
             print(ex)
         finally:
             cursor.close()
             self.connect.close()
 
+
 def get_connect():
     try:
         conn = cx_Oracle.connect("sjzx_jyk_hd", "boco#1234", "192.168.15.222:1521/orcl")
         return conn
-    except (cx_Oracle.DatabaseError) as ex:
+    except cx_Oracle.DatabaseError as ex:
         print(ex)
 
 
