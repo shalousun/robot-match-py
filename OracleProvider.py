@@ -2,6 +2,8 @@
 import os
 import cx_Oracle
 import pandas as pd
+import DataProcessor as df
+
 os.environ['NLS_LANG'] = '.AL32UTF8'
 
 
@@ -46,6 +48,9 @@ class OracleProvider:
             cursor.close()
             self.connect.close()
 
+    # 对数据类型做转换
+
+
 
 def get_connect():
     try:
@@ -62,4 +67,7 @@ if __name__ == '__main__':
     rs = oracle_provider.get_fields_info("")
     rs_dataframe = pd.DataFrame(list(rs), columns=['table_name', 'column_name', 'data_type', 'data_length', 'nullable',
                                                    'high_value', 'low_value', 'data_precision', 'primary_key'])
-    print(rs_dataframe)
+
+    # print(rs_dataframe)
+    data = df.proccess_data_type("char")
+    print(data)
