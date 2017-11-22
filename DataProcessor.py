@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import numpy as np
 #  数据类型转换，将oracle，mysql,sqlserver的类型统一转为为三种类型
 def proccess_data_type(type):
     type = type.upper()
@@ -31,3 +32,10 @@ def proccess_data_type(type):
     }
     return switcher.get(type)
 
+# 连续数值的正交化
+def sigmoid(x):
+    return 1.00 / (1 + 1.00 / np.power(1.01, x))
+
+# 非连续数值的正交化
+def sigmoid_(x):
+    return 2 * (1 / (1 + 1.00 / np.power(1.01, x)) - 0.5)

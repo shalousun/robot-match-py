@@ -3,7 +3,7 @@ import os
 import cx_Oracle
 import pandas as pd
 import DataProcessor as df
-
+import numpy as np
 os.environ['NLS_LANG'] = '.AL32UTF8'
 
 
@@ -45,6 +45,7 @@ class OracleProvider:
             cursor.execute(sql)
             rs = cursor.fetchall()
             for row in rs:
+                # tuple to list
                 tem = list(row)
                 # convert data type value
                 tem[2] = df.proccess_data_type(row[2])
@@ -56,6 +57,7 @@ class OracleProvider:
             cursor.close()
             self.connect.close()
 
+
 def get_connect():
     try:
         conn = cx_Oracle.connect("sjzx_jyk_hd", "boco#1234", "192.168.15.222:1521/orcl")
@@ -64,13 +66,17 @@ def get_connect():
         print(ex)
 
 
+
 if __name__ == '__main__':
     print("main")
-    connect = get_connect()
-    oracle_provider = OracleProvider(connect)
-    rs = oracle_provider.get_fields_info("TB_24XSRCYJL")
-    rs_dataframe = pd.DataFrame(list(rs), columns=['table_name', 'column_name', 'data_type', 'data_length', 'nullable',
-                                                   'high_value', 'low_value', 'data_precision', 'primary_key'])
+    # connect = get_connect()
+    # oracle_provider = OracleProvider(connect)
+    # rs = oracle_provider.get_fields_info("TB_ZY_ZYJSB")
+    # rs_dataframe = pd.DataFrame(list(rs), columns=['table_name', 'column_name', 'data_type', 'data_length', 'nullable',
+    #                                                'high_value', 'low_value', 'data_precision', 'primary_key'])
+    #
+    # print(rs_dataframe)
 
-    print(rs_dataframe)
-
+    x = df.sigmoid(9)
+    print x
+    print df.sigmoid_(9)
