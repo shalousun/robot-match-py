@@ -21,7 +21,8 @@ class SqlServerProvider:
         except Exception as e:
             print(e)
 
-    def get_fields_info(self, table_name):
+    #从表获取相关数据
+    def get_table_fields_info(self, table_name):
 
         if table_name and table_name.strip():
             # table_name is not None AND table_nameg is not empty or blank
@@ -83,13 +84,69 @@ class SqlServerProvider:
         finally:
             self.connect.close()
 
+    #从视图获取相关数据
+    def get_view_fields_info(self, view_name):
+
+        sql = "sp_columns " + view_name
+        col_list = []
+
+        data_list = []
+        try:
+            cursor = self.connect.cursor()
+            cursor.execute(sql)
+            rs = cursor.fetchall()
+            for row in rs:
+                # tuple to list
+                tem = list(row)
+                # convert data type value
+                tem[5] = df.proccess_data_type(row[5])
+                # 对每个column进行统计
+                col_name = tem[3]
+                if tem[2] == 2:
+                    tem[3] = 22  # 将sqlserver的所有数字型的字段长度改成22
+                    data_sql = "SELECT '" + col_name + "' as column_name,round(max(" + col_name + "),2),round(min(" \
+                               + col_name + "),2),round(avg(" + col_name + "),2),round(STDEV(" + col_name \
+                               + "),2),round(VAR(" + col_name + "),2) from " + view_name
+                else:
+                    data_sql = "SELECT '" + col_name + "' as column_name,round(max(DATALENGTH(" + col_name + ")),2),round(min(DATALENGTH(" \
+                               + col_name + ")),2),round(avg(DATALENGTH(" + col_name + ")),2),round(STDEV(DATALENGTH(" + col_name \
+                               + ")),2),round(VAR(DATALENGTH(" + col_name + ")),2) from " + view_name
+                cursor.execute(data_sql)
+                rs_data = cursor.fetchall()
+                list_data = list(rs_data[0])
+                data_list.append(list_data)
+                col_list.append(tem)
+
+            # df_col = pd.DataFrame(list(col_list),
+            #                       columns=['table_name', 'column_name', 'data_type', 'CHARACTER_MAXIMUM_LENGTH',
+            #                                'NUMERIC_PRECISION', 'NUMERIC_SCALE', 'nullable',
+            #                                'IsPartOfPrimaryKey'])
+            df_col = pd.DataFrame(list(col_list))
+            # df_col.rename(columns={'2':'table_name', 3:'column_name', 4:'data_type', 7:'CHARACTER_MAXIMUM_LENGTH',
+            #                                6:'NUMERIC_PRECISION', 8:'NUMERIC_SCALE', 10:'nullable'}, inplace=True)
+            df_col['IsPartOfPrimaryKey'] = 0
+            df_col.drop([0,1,5,9,11,12,13,14,15,16,17,18], axis=1,inplace=True)
+            df_col.columns = ['table_name', 'column_name', 'data_type', 'NUMERIC_PRECISION','CHARACTER_MAXIMUM_LENGTH',
+                                                       'NUMERIC_SCALE', 'nullable','IsPartOfPrimaryKey']
+            df_data = pd.DataFrame(data=data_list, columns=['column_name', 'max', 'min', 'avg', 'stddev', 'varience'])
+            df_col = df_col.merge(df_data, on='column_name', how='left')
+            return df_col
+        except Exception as ex:
+            print(ex)
+        finally:
+            self.connect.close()
+
 
 def get_connect():
     try:
-        conn = pymssql.connect(host='192.168.15.99',
+        # conn = pymssql.connect(host='192.168.15.99',
+        #                        user='sa',
+        #                        password='boco#1234',
+        #                        database='lis6')
+        conn = pymssql.connect(host='192.168.15.5',
                                user='sa',
                                password='boco#1234',
-                               database='lis6')
+                               database='his')
         return conn
     except Exception as ex:
         print(ex)
@@ -98,7 +155,7 @@ def get_connect():
 if __name__ == "__main__":
     connect = get_connect()
     mss_sql = SqlServerProvider(connect)
-    rs = mss_sql.get_fields_info("lab_dilution")
+    rs = mss_sql.get_view_fields_info("doctor")
     print rs
     # rs_dataframe = pd.DataFrame(list(rs), columns=['table_name', 'column_name', 'data_type', 'CHARACTER_MAXIMUM_LENGTH',
     #                                                 'NUMERIC_PRECISION', 'NUMERIC_SCALE', 'nullable',
