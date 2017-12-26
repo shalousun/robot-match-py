@@ -93,7 +93,6 @@ class OracleProvider:
                 list_data = list(rs_data[0])
                 data_list.append(list_data)
                 col_list.append(tem)
-            print(col_list)
             df_col = pd.DataFrame(data = col_list,columns=['table_name', 'column_name', 'data_type', 'data_length', 'nullable',
                                                  'high_value', 'low_value', 'data_precision', 'primary_key'])
             df_data = pd.DataFrame(data=data_list, columns=['column_name', 'max', 'min', 'avg', 'stddev', 'varience'])
@@ -107,7 +106,8 @@ class OracleProvider:
 
 def get_connect():
     try:
-        conn = cx_Oracle.connect("sjzx_hxk", "boco#1234", "192.168.15.222:1521/orcl")
+        #conn = cx_Oracle.connect("sjzx_hxk", "boco#1234", "192.168.15.222:1521/orcl")
+        conn = cx_Oracle.connect("ylfw", "123456", "192.168.15.98:1521/orcl")
         return conn
     except cx_Oracle.DatabaseError as ex:
         print(ex)
@@ -115,12 +115,6 @@ def get_connect():
 
 
 if __name__ == '__main__':
-    print("main")
     connect = get_connect()
     oracle_provider = OracleProvider(connect)
-    rs = oracle_provider.get_data_info("TB_BA_FYXX")
-    print(rs)
-
-    x = df.sigmoid(9)
-    print x
-    print df.sigmoid_(9)
+    rs = oracle_provider.get_data_info("TB_LIS_YMJG")

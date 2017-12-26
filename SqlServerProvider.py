@@ -95,18 +95,18 @@ class SqlServerProvider:
             cursor = self.connect.cursor()
             cursor.execute(sql)
             rs = cursor.fetchall()
-            for row in rs:
+            for column in rs:
                 # tuple to list
-                tem = list(row)
+                tem = list(column)
                 # convert data type value
-                tem[5] = df.proccess_data_type(row[5])
+                tem[5] = df.proccess_data_type(column[5])
                 # 对每个column进行统计
                 col_name = tem[3]
-                if tem[2] == 2:
-                    tem[3] = 22  # 将sqlserver的所有数字型的字段长度改成22
-                    data_sql = "SELECT '" + col_name + "' as column_name,round(max(" + col_name + "),2),round(min(" \
-                               + col_name + "),2),round(avg(" + col_name + "),2),round(STDEV(" + col_name \
-                               + "),2),round(VAR(" + col_name + "),2) from " + view_name
+                if tem[5] == 2:
+                    #tem[7] = 22  # 将sqlserver的所有数字型的字段长度改成22
+                    data_sql = "SELECT '" + col_name + "' as column_name,round(max(convert(bigint," + col_name + ")),2),round(min(convert(bigint," \
+                               + col_name + ")),2),round(avg(convert(bigint," + col_name + ")),2),round(STDEV(convert(bigint," + col_name \
+                               + ")),2),round(VAR(convert(bigint," + col_name + ")),2) from " + view_name
                 else:
                     data_sql = "SELECT '" + col_name + "' as column_name,round(max(DATALENGTH(" + col_name + ")),2),round(min(DATALENGTH(" \
                                + col_name + ")),2),round(avg(DATALENGTH(" + col_name + ")),2),round(STDEV(DATALENGTH(" + col_name \
@@ -125,11 +125,12 @@ class SqlServerProvider:
             # df_col.rename(columns={'2':'table_name', 3:'column_name', 4:'data_type', 7:'CHARACTER_MAXIMUM_LENGTH',
             #                                6:'NUMERIC_PRECISION', 8:'NUMERIC_SCALE', 10:'nullable'}, inplace=True)
             df_col['IsPartOfPrimaryKey'] = 0
-            df_col.drop([0,1,5,9,11,12,13,14,15,16,17,18], axis=1,inplace=True)
+            df_col.drop([0,1,4,9,11,12,13,14,15,16,17,18], axis=1,inplace=True)
             df_col.columns = ['table_name', 'column_name', 'data_type', 'NUMERIC_PRECISION','CHARACTER_MAXIMUM_LENGTH',
                                                        'NUMERIC_SCALE', 'nullable','IsPartOfPrimaryKey']
             df_data = pd.DataFrame(data=data_list, columns=['column_name', 'max', 'min', 'avg', 'stddev', 'varience'])
             df_col = df_col.merge(df_data, on='column_name', how='left')
+            #df_col.to_csv('D:\\robot-match-py\\'+ view_name + '.csv',index=False)
             return df_col
         except Exception as ex:
             print(ex)
@@ -155,8 +156,9 @@ def get_connect():
 if __name__ == "__main__":
     connect = get_connect()
     mss_sql = SqlServerProvider(connect)
-    rs = mss_sql.get_view_fields_info("doctor")
-    print rs
+    rs = mss_sql.get_view_fields_info("emr_zyyz")
+    #b_basy_train.to_csv('D:\\robot-match-py\\data\\tb_hzxx_train.csv',index=False)
+    #print rs
     # rs_dataframe = pd.DataFrame(list(rs), columns=['table_name', 'column_name', 'data_type', 'CHARACTER_MAXIMUM_LENGTH',
     #                                                 'NUMERIC_PRECISION', 'NUMERIC_SCALE', 'nullable',
     #                                                 'IsPartOfPrimaryKey'])
