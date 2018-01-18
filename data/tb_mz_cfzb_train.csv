@@ -1,0 +1,13 @@
+table_name,column_name,data_type,NUMERIC_PRECISION,CHARACTER_MAXIMUM_LENGTH,NUMERIC_SCALE,nullable,IsPartOfPrimaryKey,max,min,avg,stddev,varience
+h_cfzk,h_cfh,12,12,12,,0,0,12,12,12,0.0,0.0
+h_cfzk,m_ghxh,12,11,11,,1,0,9,0,7,0.72,0.52
+RS_ResidentInfo,JKKH,12,10,10,,1,0,8,8,8,0.0,0.0
+h_cfzk,h_lxbm,12,2,2,,1,0,2,1,1,0.34,0.12
+h_cfzk,ksbm,12,5,5,,1,0,4,0,3,0.01,0.0
+h_cfzk,ysbm,12,5,5,,1,0,5,0,4,0.44,0.2
+h_cfzk,h_cfrq,11,23,16,3.0,1,0,8,8,8,0.0,0.0
+RS_ResidentInfo,XM,12,50,50,,1,0,40,1,5,0.69,0.47
+RS_ResidentInfo,XB,1,1,1,,1,0,1,1,1,0.0,0.0
+h_cfzk,fylb,12,4,4,,1,0,2,1,1,0.5,0.25
+h_cfzk,h_cfhj,2,10,12,2.0,0,0,72640.00,-72000.00,87.520000,251.13,63064.31
+h_cfzk,zxks,12,4,4,,1,0,4,0,3,0.52,0.27

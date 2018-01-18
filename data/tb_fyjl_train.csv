@@ -1,0 +1,5 @@
+table_name,column_name,data_type,NUMERIC_PRECISION,CHARACTER_MAXIMUM_LENGTH,NUMERIC_SCALE,nullable,IsPartOfPrimaryKey,max,min,avg,stddev,varience
+v_brfy,z_bah,12,10,10,,0,0,8,8,8,0.0,0.0
+v_brfy,z_bz,12,4,4,,0,0,1,1,1,0.0,0.0
+v_brfy,z_fyje,2,8,10,2.0,0,0,72640.00,-72000.00,80.130000,269.52,72641.61
+v_brfy,z_fyje,2,8,10,2.0,0,0,72640.00,-72000.00,80.130000,269.52,72641.61

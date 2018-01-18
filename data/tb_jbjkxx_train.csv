@@ -1,0 +1,13 @@
+table_name,column_name,data_type,NUMERIC_PRECISION,CHARACTER_MAXIMUM_LENGTH,NUMERIC_SCALE,nullable,IsPartOfPrimaryKey,max,min,avg,stddev,varience
+EMR_RYJL,JBSHWS,4,10,4,0.0,1,0,,,,,
+EMR_RYJL,CRBS,4,10,4,0.0,1,0,,,,,
+EMR_RYJL,YFJZS,4,10,4,0.0,1,0,,,,,
+EMR_RYJL,SSS,4,10,4,0.0,1,0,,,,,
+EMR_RYJL,SXS,4,10,4,0.0,1,0,,,,,
+EMR_RYJL,GMS,4,10,4,0.0,1,0,,,,,
+EMR_RYJL,GRS,4,10,4,0.0,1,0,,,,,
+EMR_RYJL,HYS,4,10,4,0.0,1,0,,,,,
+EMR_RYJL,TGJCTW,4,10,4,0.0,1,0,,,,,
+EMR_RYJL,TGJCML,4,10,4,0.0,1,0,,,,,
+EMR_RYJL,TGJCSSY,4,10,4,0.0,1,0,,,,,
+EMR_RYJL,TGJCSZY,4,10,4,0.0,1,0,,,,,

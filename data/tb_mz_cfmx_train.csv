@@ -1,0 +1,5 @@
+table_name,column_name,data_type,NUMERIC_PRECISION,CHARACTER_MAXIMUM_LENGTH,NUMERIC_SCALE,nullable,IsPartOfPrimaryKey,max,min,avg,stddev,varience
+h_cfk,h_cfh,12,12,12,,0,0,12,12,12,0.0,0.0
+h_cfk,m_ghxh,12,11,11,,1,0,8,0,7,0.99,0.97
+RS_ResidentInfo,JKKH,12,10,10,,1,0,8,8,8,0.0,0.0
+RS_ResidentInfo,TYPE,12,2,2,,0,0,2,2,2,0.0,0.0

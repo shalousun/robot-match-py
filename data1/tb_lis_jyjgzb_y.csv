@@ -1,0 +1,9 @@
+table_name,column_name,data_type,data_length,nullable,high_value,low_value,data_precision,primary_key,max,min,avg,stddev,varience
+TB_LIS_JYJGZB,BGRQ,3,7,0,xu,xu,,0,7,7.0,7.0,0.0,0.0
+TB_LIS_JYJGZB,JCRXM,1,50,0,赵娜,卜一凡,,0,8,4.0,5.99,0.99,0.98
+TB_LIS_JYJGZB,JCZBDM,1,32,0,乙型流感病毒,%SO2C,,0,19,1.0,3.7,1.45,2.09
+TB_LIS_JYJGZB,JCZBMC,1,100,0,蟑螂, 乙型肝炎表面抗原(胶体金法),,0,44,1.0,10.98,4.42,19.53
+TB_LIS_JYJGZB,JYDLJGJSDW,1,20,0,摄氏度,%,,0,11,1.0,3.36,2.11,4.45
+TB_LIS_JYJGZB,CKZ,1,300,0,阴性≤2NCU/ml 阳性>2NCU/ml,-,,0,240,1.0,7.68,10.77,115.98
+TB_LIS_JYJGZB,JLDW,1,20,1,摄氏度,%,,0,11,1.0,3.36,2.11,4.45
+TB_LIS_JYJGZB,SBBM,1,20,0,XS800,7600,,0,8,2.0,5.43,1.11,1.24

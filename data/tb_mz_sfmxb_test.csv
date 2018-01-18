@@ -1,0 +1,9 @@
+table_name,column_name,data_type,data_length,nullable,high_value,low_value,data_precision,primary_key,max,min,avg,stddev,varience
+TB_MZ_SFMXB,MXXMBM,1,36,0,62,00,,0,2.0,2.0,2.0,0.0,0.0
+TB_MZ_SFMXB,MXXMMC,1,64,0,×¢Éä·Ñ,CT·Ñ,,0,8.0,4.0,5.96,0.37,0.14
+TB_MZ_SFMXB,MXXMDJ,2,22,0,Â,€,12.0,0,1824.0,0.0,34.96,60.07,3609.0
+TB_MZ_SFMXB,MXXMSL,2,22,0,ÃO,=.f,8.0,0,17800.0,-7755.0,6.24,56.23,3161.5
+TB_MZ_SFMXB,MXXMYSJE,2,22,0,ÃO,=/f,12.0,0,17800.0,-5400.0,36.93,157.58,24830.8
+TB_MZ_SFMXB,MXXMSSJE,2,22,0,ÃO,=/f,12.0,0,17800.0,-5400.0,53.83,176.66,31209.7
+TB_MZ_SFMXB,JZLSH,1,32,0,990576,-1,,0,7.0,1.0,7.0,0.08,0.01
+TB_MZ_SFMXB,SFJSSJ,3,7,0,xu::,xt	,,0,7.0,7.0,7.0,0.0,0.0

@@ -1,0 +1,5 @@
+table_name,column_name,data_type,data_length,nullable,high_value,low_value,data_precision,primary_key,max,min,avg,stddev,varience
+TB_MZ_CFMX,CFH,1,36,0,15261973,14385857,,0,8,8,8.0,0.0,0.0
+TB_MZ_CFMX,JZLSH,1,32,0,1588496,1469827,,0,7,7,7.0,0.0,0.0
+TB_MZ_CFMX,KH,1,64,0,427921036A_659001199808212425,427921036A_0000000186,,0,29,21,28.77,1.35,1.82
+TB_MZ_CFMX,KLX,1,16,0,99,07,,0,2,2,2.0,0.0,0.0

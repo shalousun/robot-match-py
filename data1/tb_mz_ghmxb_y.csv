@@ -1,0 +1,17 @@
+table_name,column_name,data_type,data_length,nullable,high_value,low_value,data_precision,primary_key,max,min,avg,stddev,varience
+TB_MZ_GHMXB,JZLSH,1,32,0,1588497,1469827,,0,7,7,7.0,0.0,0.0
+TB_MZ_GHMXB,KH,1,64,0,427921036A_659001199812140321,427921036A_0000000341,,0,29,21,28.94,0.71,0.51
+TB_MZ_GHMXB,KLX,1,16,0,99,07,,0,2,2,2.0,0.0,0.0
+TB_MZ_GHMXB,GTHSJ,3,7,0,xu9,xu3,,0,7,7,7.0,0.0,0.0
+TB_MZ_GHMXB,GHLB,1,3,0,999,100,,0,3,3,3.0,0.0,0.0
+TB_MZ_GHMXB,SFJZ,1,1,0,1,0,,0,1,1,1.0,0.0,0.0
+TB_MZ_GHMXB,XM,1,50,0,öÄÃ÷½¨,  ÐìÅàÐù,,0,25,2,5.71,0.75,0.56
+TB_MZ_GHMXB,XB,1,1,0,2,1,,0,1,1,1.0,0.0,0.0
+TB_MZ_GHMXB,CSRQ,3,7,0,x•,w–,,0,7,7,7.0,0.0,0.0
+TB_MZ_GHMXB,KSBM,1,64,0,mz99,-,,0,6,1,4.25,0.66,0.43
+TB_MZ_GHMXB,KSMC,1,76,0,×¨¼ÒÃÅÕï,-,,0,19,1,11.19,3.4,11.53
+TB_MZ_GHMXB,GHYSGH,1,36,0,SL381,-,,0,6,1,3.38,1.22,1.48
+TB_MZ_GHMXB,GHYSXM,1,50,0,ê°½ðöÎ,-,,0,8,1,4.7,2.0,4.0
+TB_MZ_GHMXB,GHF,2,22,0,Á,€,10.0,0,26,0,4.8,3.09,9.55
+TB_MZ_GHMXB,ZLF,2,22,0,€,€,10.0,0,0,0,0.0,0.0,0.0
+TB_MZ_GHMXB,GHSXH,1,1,1,0,0,,0,1,1,1.0,0.0,0.0

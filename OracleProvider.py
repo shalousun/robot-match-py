@@ -117,4 +117,4 @@ def get_connect():
 if __name__ == '__main__':
     connect = get_connect()
     oracle_provider = OracleProvider(connect)
-    rs = oracle_provider.get_data_info("TB_LIS_YMJG")
+    rs = oracle_provider.get_data_info("TB_ZY_SFMXB")

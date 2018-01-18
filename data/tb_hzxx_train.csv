@@ -1,0 +1,14 @@
+table_name,column_name,data_type,NUMERIC_PRECISION,CHARACTER_MAXIMUM_LENGTH,NUMERIC_SCALE,nullable,IsPartOfPrimaryKey,max,min,avg,stddev,varience
+b_basy,bah,12,11,11,,0,0,8,8,8,0.0,0.0
+b_basy,xm,12,50,50,,1,0,30,2,5,0.73,0.53
+b_basy,xb,1,1,1,,1,0,1,1,1,0.0,0.0
+b_basy,csny,11,23,16,3.0,1,0,8,8,8,0.0,0.0
+b_basy,nl,3,3,5,0.0,1,0,253,0,42.070000,22.39,501.23
+b_basy,hyzk,1,1,1,,1,0,1,1,1,0.0,0.0
+b_basy,csd,12,50,50,,1,0,22,0,6,1.02,1.04
+b_basy,gzdw,12,100,100,,1,0,52,0,41,17.05,290.61
+b_basy,gzdwyb,12,50,50,,1,0,6,0,5,0.48,0.23
+b_basy,hkdz,12,100,100,,1,0,52,0,44,10.71,114.81
+b_basy,hkyb,12,50,50,,1,0,6,0,5,0.09,0.01
+b_basy,lxrxm,12,50,50,,1,0,20,0,16,5.81,33.81
+b_basy,lxrgx,1,1,1,,1,0,1,1,1,0.0,0.0

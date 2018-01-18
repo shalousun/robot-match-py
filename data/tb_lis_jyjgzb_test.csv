@@ -1,0 +1,12 @@
+table_name,column_name,data_type,data_length,nullable,high_value,low_value,data_precision,primary_key,max,min,avg,stddev,varience
+TB_LIS_JYJGZB,JYZBLSH,1,50,0,41672875,39532414,,0,8,8.0,8.0,0.0,0.0
+TB_LIS_JYJGZB,BGDH,1,64,0,201706111811,201704010001,,0,12,12.0,12.0,0.0,0.0
+TB_LIS_JYJGZB,BGRQ,3,7,0,xu,xu,,0,7,7.0,7.0,0.0,0.0
+TB_LIS_JYJGZB,JCRXM,1,50,0,’‘ƒ»,≤∑“ª∑≤,,0,8,4.0,5.99,0.99,0.98
+TB_LIS_JYJGZB,JCZBDM,1,32,0,““–Õ¡˜∏–≤°∂æ,%SO2C,,0,19,1.0,3.7,1.45,2.09
+TB_LIS_JYJGZB,JCZBMC,1,100,0,ÛØÚÎ, ““–Õ∏Œ—◊±Ì√Êøπ‘≠(Ω∫ÃÂΩ∑®),,0,44,1.0,10.98,4.42,19.53
+TB_LIS_JYJGZB,JYDLJG,2,22,0,≈`,>Jaf,14.0,0,695000000,-27.04,4080.13,1263346.0,1.59604311126e+12
+TB_LIS_JYJGZB,JYDLJGJSDW,1,20,0,…„ œ∂»,%,,0,11,1.0,3.36,2.11,4.45
+TB_LIS_JYJGZB,CKZ,1,300,0,“ı–‘°‹2NCU/ml —Ù–‘>2NCU/ml,-,,0,240,1.0,7.68,10.77,115.98
+TB_LIS_JYJGZB,SBBM,1,20,0,XS800,7600,,0,8,2.0,5.43,1.11,1.24
+TB_LIS_JYJGZB,JLDW,1,20,1,…„ œ∂»,%,,0,11,1.0,3.36,2.11,4.45

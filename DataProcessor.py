@@ -32,10 +32,10 @@ def proccess_data_type(type):
     }
     return switcher.get(type)
 
-# 连续数值的正交化
+# 连续数值的归一化
 def sigmoid(x):
     return 1.00 / (1 + 1.00 / np.power(1.01, x))
 
-# 非连续数值的正交化
+# 连续非负数的归一化
 def sigmoid_(x):
     return 2 * (1 / (1 + 1.00 / np.power(1.01, x)) - 0.5)

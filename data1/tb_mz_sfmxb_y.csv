@@ -1,0 +1,9 @@
+table_name,column_name,data_type,data_length,nullable,high_value,low_value,data_precision,primary_key,max,min,avg,stddev,varience
+TB_ZY_SFMXB,JZLSH,1,32,0,264820,230841,,0,6,6,6,0,0
+TB_ZY_SFMXB,SFJSSJ,3,7,0,xu5,wd,,0,7,7,7,0,0
+TB_ZY_SFMXB,MXXMBM,1,36,0,ZZ64,ZZ00,,0,4,4,4,0,0
+TB_ZY_SFMXB,MXXMMC,1,64,0,×¢Éä·Ñ,CT·Ñ,,0,8,3,6,0.25,0.06
+TB_ZY_SFMXB,MXXMDJ,2,22,0,?>,€,12,0,56100,0,35.93,201.01,40405.21
+TB_ZY_SFMXB,MXXMSL,2,22,0,?3,#NAME?,9,0,2250,-2250,4.13,25.74,662.58
+TB_ZY_SFMXB,MXXMYSJE,2,22,0,?>,<bIEf,12,0,56100,-32832,50.46,260.45,67836.11
+TB_ZY_SFMXB,MXXMSSJE,2,22,0,?>,<bIEf,12,0,56100,-32832,50.46,260.45,67836.11

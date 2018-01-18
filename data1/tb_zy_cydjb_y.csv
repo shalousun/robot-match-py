@@ -1,0 +1,10 @@
+table_name,column_name,data_type,data_length,nullable,high_value,low_value,data_precision,primary_key,max,min,avg,stddev,varience
+TB_ZY_CYDJB,YLJGDM,1,10,0,427921036A,427921036A,,0,10,10,10.0,0.0,0.0
+TB_ZY_CYDJB,ZYH,1,32,0,788700,755492,,0,6,6,6.0,0.0,0.0
+TB_ZY_CYDJB,CYKSBM,1,64,0,99,01,,0,3,2,2.21,0.41,0.17
+TB_ZY_CYDJB,CYKSMC,1,76,0,Ö×Áö/ÑªÒº¿Æ,ICUÊÒ,,0,15,4,7.67,2.86,8.16
+TB_ZY_CYDJB,ZYYSGH,1,36,0,L398,0059,,0,5,4,4.0,0.06,0.0
+TB_ZY_CYDJB,ZYYSXM,1,50,0,ê°½ðöÎ,²ñÏææÃ,,0,6,4,5.61,0.79,0.62
+TB_ZY_CYDJB,CYSJ,3,7,0,xu5,"xu
+",,0,7,7,7.0,0.0,0.0
+TB_ZY_CYDJB,CYZDMC,1,80,0,÷Æ¹Ç¹ÇÕÛ,1ÐÍÌÇÄò²¡,,0,59,2,10.48,5.45,29.74

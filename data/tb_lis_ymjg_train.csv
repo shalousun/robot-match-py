@@ -1,0 +1,6 @@
+table_name,column_name,data_type,NUMERIC_PRECISION,CHARACTER_MAXIMUM_LENGTH,NUMERIC_SCALE,nullable,IsPartOfPrimaryKey,max,min,avg,stddev,varience
+inspec_micro_item_combine,micro_serial_no,12,8,8,,1,0,2.0,1.0,1.0,0.35,0.12
+inspec_micro_item_combine,combine_sort,12,20,20,,1,0,3.0,3.0,3.0,0.0,0.0
+inspec_micro_item,micro_item_id,12,10,10,,0,0,7.0,7.0,7.0,0.0,0.0
+inspec_micro_item,micro_item_name_cn,12,100,100,,1,0,35.0,4.0,13.0,5.58,31.16
+inspec_micro_item_combine,result2,12,20,20,,1,0,4.0,4.0,4.0,0.0,0.0

@@ -1,0 +1,9 @@
+table_name,column_name,data_type,NUMERIC_PRECISION,CHARACTER_MAXIMUM_LENGTH,NUMERIC_SCALE,nullable,IsPartOfPrimaryKey,max,min,avg,stddev,varience
+m_brfy,m_sfxh,1.0,8,8,,0,0,8.0,8.0,8.0,0.0,0.0
+RS_ResidentInfo,JKKH,1.0,10,10,,1,0,8.0,8.0,8.0,0.0,0.0
+RS_ResidentInfo,TYPE,1.0,2,2,,0,0,2.0,2.0,2.0,0.0,0.0
+m_brfy,m_ghxh,1.0,8,8,,1,0,8.0,8.0,8.0,0.0,0.0
+m_brfy,m_sjh,1.0,12,12,,0,0,12.0,1.0,2.0,3.07,9.44
+m_brfy,m_sfrq,3.0,23,16,3.0,0,0,8.0,8.0,8.0,0.0,0.0
+m_brfy,m_sfje,2.0,8,10,2.0,1,0,6000.0,-912.0,40.0,78.98,6237.65
+m_brfy,m_sfje,2.0,8,10,2.0,1,0,6000.0,-912.0,40.0,78.98,6237.65

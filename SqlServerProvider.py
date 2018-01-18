@@ -156,7 +156,7 @@ def get_connect():
 if __name__ == "__main__":
     connect = get_connect()
     mss_sql = SqlServerProvider(connect)
-    rs = mss_sql.get_view_fields_info("emr_zyyz")
+    rs = mss_sql.get_view_fields_info("z_brfy")
     #b_basy_train.to_csv('D:\\robot-match-py\\data\\tb_hzxx_train.csv',index=False)
     #print rs
     # rs_dataframe = pd.DataFrame(list(rs), columns=['table_name', 'column_name', 'data_type', 'CHARACTER_MAXIMUM_LENGTH',

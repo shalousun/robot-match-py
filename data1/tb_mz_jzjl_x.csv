@@ -1,0 +1,8 @@
+table_name,column_name,data_type,NUMERIC_PRECISION,CHARACTER_MAXIMUM_LENGTH,NUMERIC_SCALE,nullable,IsPartOfPrimaryKey,max,min,avg,stddev,varience
+m_bljl,brxh,1.0,20,20,,0,0,12.0,8.0,9.0,1.94,3.76
+m_bljl,xm,1.0,50,50,,1,0,40.0,1.0,5.0,0.7,0.49
+m_bljl,ysbm,1.0,4,4,,1,0,4.0,1.0,3.0,0.34,0.12
+m_bljl,zd,1.0,80,80,,1,0,9.0,1.0,6.0,1.37,1.88
+m_bljl,zdmc,1.0,100,100,,1,0,73.0,2.0,11.0,5.88,34.52
+m_bljl,zyxs,1.0,200,200,,1,0,120.0,0.0,13.0,6.72,45.15
+m_bljl,fbrq,3.0,23,16,3.0,1,0,8.0,8.0,8.0,0.0,0.0
